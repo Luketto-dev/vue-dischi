@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TheHeader></TheHeader>
-    <main>
+    <main class="py-3">
       <DiscsList></DiscsList>
     </main>
     
