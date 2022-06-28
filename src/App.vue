@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <TheHeader></TheHeader>
+    <TheHeader :lista-artisti="listaArtisti" @searchArtist="onSearchArtist"></TheHeader>
     <main class="py-3">
-      <DiscsList></DiscsList>
+      <DiscsList @artistsUpdate="onArtistsUpdate" :artist="artist" ></DiscsList>
     </main>
     
   </div>
@@ -18,6 +18,22 @@ export default {
   components: {
     TheHeader,
     DiscsList,
+  },
+  data(){
+    return{
+      listaArtisti: [],
+      artist : ""
+    }
+  },
+  methods : {
+    onArtistsUpdate(listaArtisti){
+      this.listaArtisti = listaArtisti
+      
+    },
+    onSearchArtist(artist){
+      this.artist = artist
+      
+    }
   }
 }
 </script>
